@@ -1,12 +1,15 @@
 import React from 'react';
 
 const RecipeList = ({ recipes }) => {
+
+    const recipeArray = Array.isArray(recipes) ? recipes : [];
+
     return (
         <ul>
-            {recipes.map((recipe) => (
+            {recipeArray.map((recipe) => (
                 <li key={recipe.id}>
                     <h3>{recipe.title}</h3>
-                    <p>{recipe.ingredients}</p>
+                    <h3>{recipe.ingredients}</h3>
                     <p>{recipe.instructions}</p>
                 </li>
             ))}
