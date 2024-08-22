@@ -22,3 +22,14 @@ export const addRecipe = async (newRecipe) => {
         return { error: "Failed to add recipe" };
     }
 };
+
+export const generateAIRecipe = async (ingredients) => {
+    try {
+        console.log(ingredients)
+        const response = await axios.post(`${API_BASE_URL}recipe/surprise/`, ingredients);
+        return response.data;
+    } catch (error) {
+        console.error("Error accessing Groq API:", error);
+        return { error: "Failed to access API" };
+    }
+};
