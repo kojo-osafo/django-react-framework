@@ -25,20 +25,29 @@ const App = () => {
     };
 
     return (
-        <div>
-            <div>
-            <h1>Recipe Finder</h1>
-            <RecipeViewer onSubmit={handleSearch} />
-            <RecipeList recipes={recipes} />
+        <div style={{ padding: '20px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px' }}>
+                <div style={{ width: '48%' }}>
+                    <h2 style={{ margin: '0 0 10px', color: '#5A9BD3' }}>
+                        Recipe Finder
+                    </h2>
+                    <RecipeViewer onSubmit={handleSearch} />
+                    <RecipeList recipes={recipes} />
+                </div>
+                <div style={{ width: '48%' }}>
+                    <h2 style={{ margin: '0 0 10px', color: '#5A9BD3' }}>
+                        Recipe Submit
+                    </h2>
+                    <AddRecipeForm onSubmit={addRecipe} />
+                </div>
             </div>
-            <div>
-                <h2>Recipe Submit</h2>
-                <AddRecipeForm onSubmit={addRecipe}/>
-            </div>
-            <div>
-            <h1>Try Out an AI-Generated Recipe!</h1>
-            <GenerateRecipeForm onSubmit={handleAIQuery} />
-            <GeneratedRecipeViewer recipe={AIRecipe} />
+            
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+                <h2 style={{ margin: '0 0 10px', color: '#5A9BD3' }}>
+                    Try Out an AI-Generated Recipe!
+                </h2>
+                <GenerateRecipeForm onSubmit={handleAIQuery} />
+                <GeneratedRecipeViewer recipe={AIRecipe} />
             </div>
         </div>
     );

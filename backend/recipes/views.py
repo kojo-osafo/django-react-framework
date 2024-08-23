@@ -86,7 +86,6 @@ def groq_query(request):
                 stop=None,
             )
 
-            print(completion.choices[0].message.content)
             response_data = json.loads(completion.choices[0].message.content)
 
             return JsonResponse(response_data, status=200)
@@ -96,6 +95,8 @@ def groq_query(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
+
+# For API debugging
 # prompt = "Give me a delicious food recipe"
 
 # client = Groq()

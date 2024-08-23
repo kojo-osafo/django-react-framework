@@ -18,15 +18,22 @@ const GenerateRecipeForm = ({onSubmit}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <textarea
-                name="ingredients"
-                placeholder="Optional: Enter Comma-Separated List of Ingredients"
-                value={formData.ingredients}
-                onChange={handleChange}
-            />
-            <button type="submit">Surprise Me!</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <textarea
+                    name="ingredients"
+                    placeholder="Optional: Enter Comma-Separated List of Ingredients"
+                    value={formData.ingredients}
+                    onChange={handleChange}
+                    style={{ padding: '8px', fontSize: '12px', minHeight: '50px' }}
+                />
+                <button
+                    type="submit" style={{padding: '5px 10px', fontSize: '10px', cursor: 'pointer', color: '#5A9BD3'}}
+                >
+                    Surprise Me!
+                </button>
+            </form>
+        </div>
     );
 };
 
