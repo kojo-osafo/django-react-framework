@@ -6,7 +6,7 @@ const GeneratedRecipeViewer = ({ recipe }) => {
     // should always generate unless user enters something which is not an ingredient
     // API will respond with title = "null"
     if (!recipe.title) {
-        return <p>No recipe available. Please enter valid ingredients.</p>;
+        return <p>No recipe available. Please try again</p>;
     }
 
     return (
